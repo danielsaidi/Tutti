@@ -68,7 +68,7 @@ This repository contains an example app. To try it out, open the `Tutti` project
 
 ## Hints
 
-Tutti comes with a set of built-in hint types that can be used for different purposes. 
+Tutti comes with a set of built-in hint types that can be used for different purposes.
 
 * `StandardHint` - This is a basic hint with no specific behavior.
 * `DeferredHint` - This type requires a certain number of presentation attempts before it is actually presented.
@@ -84,9 +84,9 @@ This is the most basic way to create a hint with Tutti:
 ```swift
 func createHint(for userId: String?) -> Hint {
     return StandardHint(
-        identifier: "hint", 
-        title: "This is a hint!", 
-        text: "This hint will only be displayed once.", 
+        identifier: "hint",
+        title: "This is a hint!",
+        text: "This hint will only be displayed once.",
         userId: userId)
 }
 ```
@@ -118,7 +118,7 @@ You can also create your own custom presented by implementing the `HintPresenter
 
 ## Tutorials
 
-Tutti comes with a set of built-in tutorial types that can be used for different purposes. 
+Tutti comes with a set of built-in tutorial types that can be used for different purposes.
 
 * `StandardTutorial` - This is a basic tutorial with no specific behavior.
 * `DeferredTutorial` - This type requires a certain number of presentation attempts before it is actually presented.
@@ -134,18 +134,18 @@ This is the most basic way to create a standard tutorial with Tutti:
 ```swift
 func createTutorial(for userId: String?) -> Tutorial {
     return StandardTutorial(
-        identifier: "standard", 
+        identifier: "standard",
         pageCount: 2,
         userId: userId)
 }
 ```
 
-You can then use the tutorial's `resourceName(for key: String, at pageIndex: Int)` function to get a suggested name for any kind of resource at any page. 
+You can then use the tutorial's `resourceName(for key: String, at pageIndex: Int)` function to get a suggested name for any kind of resource at any page.
 
 For instance, adding the following localized strings to your app would provide a title and a text for two pages in a tutorial with the id `standard`:
 
 ```swift
-/* 
+/*
 
 In Localizable.strings, add this to support the standard tutorial:
     "tutorial_standard_0_title" = "Page 1 title";
@@ -177,7 +177,27 @@ Tutti only comes with a single built-in tutorial presenter: `TutorialViewControl
 
 This presenter presents tutorials in a modal view controller that takes over the entire screen. To use it, just add a `TutorialViewController.xib` and a `TutorialViewControllerCell.xib` file to your app, then connect your subviews to any outlets provided by `TutorialViewController`. You can also subclass `TutorialViewController` and add as many outlets and triggers as you want.
 
-Creating your own xibs require a bit of work, but you can always copy the xibs from the example app and configure them to look the way you want them to look. I don't want to add them to the library, since they are pretty rough and would not provide a nice user experience.
+
+### TutorialViewController
+
+This tutorial presenter presents tutorials in a modal view controller that takes
+over the entire screen.
+
+To use it, just add a `YourCustomTutorialViewController.xib` and a
+`YourCustomTutorialViewControllerCell.xib` to your app and set'em up the way you want them
+to look.
+```swift
+let presenter = TutorialViewController(nibName: "YourCustomTutorialViewController", bundle: Bundle.main)
+```
+
+The `TutorialViewController` class comes with some outlets, but you can
+subclass it and add as many outlets and triggers as you want.  
+Creating your own xibs require a bit of work, but you can always copy the xibs from the example app and configure them to look the way you want them to look.
+
+Or if you use build-in template, just initialize `TutorialViewController` with `nil` parameter.
+```swift
+let presenter = TutorialViewController(nibName: nil, bundle: nil)
+```
 
 
 ## Contact me
