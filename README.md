@@ -78,6 +78,15 @@ I hope you like this library. Feel free to reach out if you have questions or if
 * Web site: [danielsaidi.com][Website]
 
 
+## Sponsors and Clients
+
+This project is proudly sponsored by the following individuals:
+
+* [@booch](https://github.com/booch)
+
+You can support my work by sponsoring the project on [GitHub Sponsors][Sponsors] or hiring me for consultation. I'd be happy to help you out in any way that I can.
+
+
 ## License
 
 Tutti is available under the MIT license. See LICENSE file for more info.
@@ -85,6 +94,7 @@ Tutti is available under the MIT license. See LICENSE file for more info.
 [Email]: mailto:daniel.saidi@gmail.com
 [Twitter]: http://www.twitter.com/danielsaidi
 [Website]: http://www.danielsaidi.com
+[Sponsors]: https://github.com/sponsors/danielsaidi
 
 [Carthage]: https://github.com/Carthage/Carthage
 [CocoaPods]: https://cocoapods.org/
